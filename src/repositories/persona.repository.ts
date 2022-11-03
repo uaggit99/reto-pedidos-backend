@@ -11,6 +11,10 @@ export class PersonaRepository extends DefaultCrudRepository<
 > {
 
   public readonly pedidos: HasManyRepositoryFactory<Pedido, typeof Persona.prototype.id>;
+  correo: any;
+  id: any;
+  nombres: string;
+  apellidos: string;
 
   constructor(
     @inject('datasources.mongodb') dataSource: MongodbDataSource, @repository.getter('PedidoRepository') protected pedidoRepositoryGetter: Getter<PedidoRepository>,
